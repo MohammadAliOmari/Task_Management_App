@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:task_app/constants.dart';
+import 'package:task_app/features/home/presentation/home_screen.dart';
 import 'package:task_app/features/layout/presentation/view/widgets/bottom_sheet_item.dart';
 
 part 'layout_state.dart';
@@ -10,7 +11,7 @@ class LayoutCubit extends Cubit<LayoutCubitState> {
   LayoutCubit() : super(LayoutCubitInitial());
   int curentindex = 0;
   List<Widget> screens = [
-    Container(),
+    const HomeScreen(),
     Container(),
     Container(),
     Container(),

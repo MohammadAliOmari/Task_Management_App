@@ -11,6 +11,8 @@ ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
     secondaryHeaderColor: kGrayColor,
     appBarTheme: const AppBarTheme(
+      centerTitle: true,
+      backgroundColor: Colors.white,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.white,
         statusBarIconBrightness: Brightness.dark,

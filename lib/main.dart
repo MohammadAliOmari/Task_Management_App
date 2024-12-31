@@ -8,9 +8,9 @@ import 'package:task_app/core/utils/themes/dark_theme.dart';
 import 'package:task_app/core/utils/themes/light_theme.dart';
 
 void main() async {
-  await dotenv.load(fileName: ".env");
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
+  await dotenv.load();
   getItSetup();
   runApp(const MyApp());
 }

@@ -24,7 +24,7 @@ class CustomAppBar extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
               border: Border.all(
-                color: kGrayColor,
+                color: kLightGrayColor,
               ),
             ),
             child: IconButton(

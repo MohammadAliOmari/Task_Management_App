@@ -14,12 +14,6 @@ class LayoutBlocConsumer extends StatelessWidget {
       listener: (context, state) {},
       builder: (context, state) {
         return Scaffold(
-          appBar: AppBar(
-              backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-              title: Text(
-                'Task App',
-                style: Theme.of(context).textTheme.titleLarge,
-              )),
           body: context.read<LayoutCubit>().screens[context
               .read<LayoutCubit>()
               .curentindex], // Show the page based on the selected index

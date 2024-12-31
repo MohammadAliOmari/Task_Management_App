@@ -5,7 +5,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class ApiServices {
-  Dio _dio;
+  late Dio _dio;
   static String ipAddress = dotenv.env['IP_ADDRESS']!;
   final String baseUrl = 'http://$ipAddress/task_management/';
 
