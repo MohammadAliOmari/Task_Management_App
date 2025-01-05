@@ -1,8 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_app/features/add_task/data/models/add_task_model.dart';
 import 'package:task_app/features/add_task/data/repos/add_task_repo.dart';
-import 'package:task_app/features/login/data/repo/login_repo_imp.dart';
 
 part 'add_task_state.dart';
 
@@ -22,6 +23,7 @@ class AddTaskCubit extends Cubit<AddTaskState> {
       emit(AddTaskFailureState(l.message));
     }, (r) {
       addtaskModel = AddTaskModel.fromJson(r);
+      log(addtaskModel!.success.toString());
       emit(AddTaskSuccessState(addtaskModel!));
     });
   }
