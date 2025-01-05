@@ -11,9 +11,15 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton(
         style: Theme.of(context).elevatedButtonTheme.style,
         onPressed: onPressed,
-        child: Text(
-          title,
-          style: Styles.textStyle16meduim.copyWith(color: Colors.white),
+        child: SizedBox(
+          width: 600, // Set your desired width here
+          child: Text(
+            title,
+            overflow: TextOverflow.ellipsis, // Prevents text overflow
+            maxLines: 1, // Ensure text stays in one line
+            style: Styles.textStyle16meduim.copyWith(color: Colors.white),
+            textAlign: TextAlign.center, // Center the text
+          ),
         ),
       ),
     );

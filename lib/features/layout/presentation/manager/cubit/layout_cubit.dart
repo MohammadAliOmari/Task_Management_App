@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:task_app/constants.dart';
-import 'package:task_app/features/home/presentation/home_screen.dart';
+import 'package:task_app/core/utils/app_router.dart';
+import 'package:task_app/features/home/presentation/view/home_screen.dart';
 import 'package:task_app/features/layout/presentation/view/widgets/bottom_sheet_item.dart';
 
 part 'layout_state.dart';
@@ -44,7 +45,9 @@ class LayoutCubit extends Cubit<LayoutCubitState> {
                 BottomSheetItem(
                   title: 'Create Task',
                   icon: const Icon(Icons.add_task_outlined),
-                  onTap: () {},
+                  onTap: () {
+                    GoRouter.of(context).push(AppRouter.kAddTask);
+                  },
                 ),
                 const SizedBox(
                   height: 16,

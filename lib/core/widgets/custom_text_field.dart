@@ -9,16 +9,19 @@ class CustomTextField extends StatelessWidget {
       this.obscureText = false,
       this.icon,
       this.onpressed,
-      required this.validator});
+      required this.validator,
+      this.onTap});
   final String hintText;
   final Function(String?)? validator;
   final TextEditingController controller;
   final bool? obscureText;
   final Icon? icon;
   final void Function()? onpressed;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onTap: onTap,
       cursorColor: Theme.of(context).secondaryHeaderColor,
       obscureText: obscureText!,
       controller: controller,
