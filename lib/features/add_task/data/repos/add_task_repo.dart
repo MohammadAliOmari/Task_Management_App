@@ -3,5 +3,5 @@ import 'package:task_app/core/errors/errors.dart';
 
 abstract class AddTaskRepo {
   Future<Either<Failure, Map<String, dynamic>>> addTask(
-      String title, String description, String date, String notes);
+      String title, String description, String date, String notes, int roleid);
 }

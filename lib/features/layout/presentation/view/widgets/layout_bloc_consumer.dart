@@ -22,7 +22,7 @@ class LayoutBlocConsumer extends StatelessWidget {
             elevation: 12,
             backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             currentIndex: context.read<LayoutCubit>().curentindex,
-            selectedItemColor: kPurpleColor,
+            selectedItemColor: Theme.of(context).iconTheme.color,
             unselectedItemColor: kGrayColor,
             showSelectedLabels: false,
             iconSize: 28,
@@ -53,7 +53,7 @@ class LayoutBlocConsumer extends StatelessWidget {
                   width: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
-                    color: kPurpleColor,
+                    color: Theme.of(context).iconTheme.color,
                   ),
                   child: const Icon(
                     Icons.add_outlined,

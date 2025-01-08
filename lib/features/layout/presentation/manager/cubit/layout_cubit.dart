@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:task_app/constants.dart';
 import 'package:task_app/core/utils/app_router.dart';
 import 'package:task_app/features/home/presentation/view/home_screen.dart';
 import 'package:task_app/features/layout/presentation/view/widgets/bottom_sheet_item.dart';
@@ -76,7 +75,7 @@ class LayoutCubit extends Cubit<LayoutCubitState> {
                   width: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
-                    color: kPurpleColor,
+                    color: Theme.of(context).iconTheme.color,
                   ),
                   child: IconButton(
                     onPressed: () {

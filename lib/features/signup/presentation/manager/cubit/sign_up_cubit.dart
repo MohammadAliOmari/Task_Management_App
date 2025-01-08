@@ -34,4 +34,12 @@ class SignUpCubit extends Cubit<SignUpState> {
     obscureText = !obscureText;
     emit(SignUpPasswordVisibilityState(obscureText));
   }
+
+  @override
+  Future<void> close() {
+    emailController.dispose();
+    passwordController.dispose();
+    nameController.dispose();
+    return super.close();
+  }
 }

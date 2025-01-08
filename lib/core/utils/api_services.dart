@@ -46,10 +46,10 @@ class ApiServices {
       }
     } on DioException catch (e) {
       final errorData = _handleError(e);
-      throw ApiException(errorData['error']); // Throw a custom ApiException
+      return errorData; // Return the error data ApiException(errorData['error']); // Throw a custom ApiException
     } catch (e) {
       log("Error: $e");
-      throw ApiException("An unexpected error occurred: ${e.toString()}");
+      return {'error': e.toString()};
     }
   }
 

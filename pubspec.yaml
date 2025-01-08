@@ -45,6 +45,7 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   smooth_page_indicator: ^1.2.0+3
   toastification: ^2.3.0
+  toggle_switch: ^2.3.0
 
 dev_dependencies:
   flutter_lints: ^4.0.0

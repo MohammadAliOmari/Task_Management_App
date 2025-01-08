@@ -17,8 +17,8 @@ class InProgressListView extends StatelessWidget {
           itemBuilder: (context, index) => Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
-                  color: Colors.white,
-                  border: Border.all(color: kLightGrayColor),
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  border: Border.all(color: kGrayColor),
                 ),
                 margin: const EdgeInsets.only(bottom: 16),
                 height: 85,
@@ -53,7 +53,7 @@ class InProgressListView extends StatelessWidget {
                               .copyWith(color: Theme.of(context).primaryColor),
                         ),
                         backgroundColor: kLightGrayColor,
-                        progressColor: kPurpleColor,
+                        progressColor: Theme.of(context).iconTheme.color,
                       ),
                     ],
                   ),

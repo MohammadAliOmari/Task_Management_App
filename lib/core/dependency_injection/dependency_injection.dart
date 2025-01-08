@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:task_app/core/utils/api_services.dart';
+import 'package:task_app/features/add_task/data/repos/add_task_repo_impl.dart';
+import 'package:task_app/features/add_task/presentation/manager/add_task_cubit.dart';
 import 'package:task_app/features/login/data/repo/login_repo_imp.dart';
 import 'package:task_app/features/login/presentation/manager/cubit/login_cubit.dart';
 import 'package:task_app/features/signup/data/repo/sign_up_repo_imp.dart';
@@ -12,13 +14,24 @@ final getIt = GetIt.instance;
 ///
 /// This should be called once at app startup.
 void getItSetup() {
-  getIt.registerFactory<ApiServices>(() => ApiServices(Dio()));
-  getIt.registerFactory<LoginRepoImp>(
+  // Dio & ApiServices
+  getIt.registerLazySingleton<ApiServices>(() => ApiServices(Dio()));
+
+  // login
+  getIt.registerLazySingleton<LoginRepoImp>(
       () => LoginRepoImp(getIt.get<ApiServices>()));
   getIt
       .registerFactory<LoginCubit>(() => LoginCubit(getIt.get<LoginRepoImp>()));
-  getIt.registerFactory<SignUpRepoImp>(
+
+  // Sign up
+  getIt.registerLazySingleton<SignUpRepoImp>(
       () => SignUpRepoImp(getIt.get<ApiServices>()));
   getIt.registerFactory<SignUpCubit>(
       () => SignUpCubit(getIt.get<SignUpRepoImp>()));
+  // Add Task
+  getIt.registerLazySingleton<AddTaskRepoImpl>(
+    () => AddTaskRepoImpl(getIt.get<ApiServices>()),
+  );
+  getIt.registerFactory<AddTaskCubit>(
+      () => AddTaskCubit(getIt.get<AddTaskRepoImpl>()));
 }

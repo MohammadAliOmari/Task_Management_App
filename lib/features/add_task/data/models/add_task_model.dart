@@ -13,26 +13,30 @@ class AddTaskModel {
   bool? success;
   String? message;
   String? taskId;
-  int? assignedTo;
+  String? roleName;
+  int? usercount;
 
   AddTaskModel({
     this.success,
     this.message,
     this.taskId,
-    this.assignedTo,
+    this.usercount,
+    this.roleName,
   });
 
   factory AddTaskModel.fromJson(Map<String, dynamic> json) => AddTaskModel(
         success: json["success"],
         message: json["message"],
         taskId: json["task_id"],
-        assignedTo: json["assigned_to"],
+        usercount: json["user_count"],
+        roleName: json["role_name"],
       );
 
   Map<String, dynamic> toJson() => {
         "success": success,
         "message": message,
         "task_id": taskId,
-        "assigned_to": assignedTo,
+        "user_count": usercount,
+        "role_name": roleName,
       };
 }

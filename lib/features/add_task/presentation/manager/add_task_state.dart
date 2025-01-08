@@ -6,7 +6,10 @@ final class AddTaskInitialState extends AddTaskState {}
 
 final class AddTaskLoadingState extends AddTaskState {}
 
-final class AddTaskSuccessState extends AddTaskState {}
+final class AddTaskSuccessState extends AddTaskState {
+  final AddTaskModel addTaskModel;
+  AddTaskSuccessState(this.addTaskModel);
+}
 
 final class AddTaskFailureState extends AddTaskState {
   final String message;

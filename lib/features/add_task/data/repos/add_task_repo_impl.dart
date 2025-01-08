@@ -9,14 +9,15 @@ class AddTaskRepoImpl extends AddTaskRepo {
 
   AddTaskRepoImpl(this._apiServices);
   @override
-  Future<Either<Failure, Map<String, dynamic>>> addTask(
-      String title, String description, String date, String notes) async {
+  Future<Either<Failure, Map<String, dynamic>>> addTask(String title,
+      String description, String date, String notes, int roleid) async {
     try {
       var response = await _apiServices.post('add_task.php', data: {
         "title": title,
         "description": description,
         "deadline": date,
-        "notes": notes
+        "notes": notes,
+        "role_id": roleid
       });
       return right(response);
     } catch (e) {
