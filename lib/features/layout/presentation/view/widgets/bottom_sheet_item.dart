@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/constants.dart';
 
 class BottomSheetItem extends StatelessWidget {
@@ -24,8 +25,8 @@ class BottomSheetItem extends StatelessWidget {
         title: Row(
           children: [
             icon,
-            const SizedBox(
-              width: 12,
+            SizedBox(
+              width: 12.w,
             ),
             Text(title)
           ],

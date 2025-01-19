@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:task_app/constants.dart';
 import 'package:task_app/core/utils/styles/text_style.dart';
@@ -11,7 +12,7 @@ class InProgressListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300,
+      height: 300.h,
       child: ListView.builder(
           shrinkWrap: true,
           itemBuilder: (context, index) => Container(
@@ -21,8 +22,8 @@ class InProgressListView extends StatelessWidget {
                   border: Border.all(color: kGrayColor),
                 ),
                 margin: const EdgeInsets.only(bottom: 16),
-                height: 85,
-                width: 330,
+                height: 85.h,
+                width: 330.w,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 15.0, vertical: 13),
@@ -44,8 +45,8 @@ class InProgressListView extends StatelessWidget {
                         ],
                       ),
                       CircularPercentIndicator(
-                        radius: 20.0,
-                        lineWidth: 4.0,
+                        radius: 20.0.w,
+                        lineWidth: 4.0.w,
                         percent: 0.8,
                         center: Text(
                           "80%",

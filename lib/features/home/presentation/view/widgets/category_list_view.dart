@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/core/utils/styles/text_style.dart';
 
 class CategoryListView extends StatelessWidget {
@@ -9,18 +10,18 @@ class CategoryListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 150,
+      height: 150.h,
       child: ListView.builder(
         shrinkWrap: true,
         itemBuilder: (context, index) => Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(16).w,
             color: Colors.red,
           ),
-          padding: const EdgeInsets.only(left: 23, top: 26),
-          margin: const EdgeInsets.only(right: 16),
-          width: 260,
-          height: 100,
+          padding: EdgeInsets.only(left: 23.w, top: 26.h),
+          margin: EdgeInsets.only(right: 16.w),
+          width: 260.w,
+          height: 100.h,
           child: Text(
             'Youtube Video',
             style: Styles.textStyle18semibold.copyWith(color: Colors.white),

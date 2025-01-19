@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:task_app/constants.dart';
 import 'package:task_app/core/utils/styles/text_style.dart';
@@ -23,7 +24,7 @@ class AddTaskBlocBuilder extends StatelessWidget {
           child: Form(
             key: cubit.formKey,
             child: Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: EdgeInsets.symmetric(horizontal: 24.0.w, vertical: 24.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -31,8 +32,8 @@ class AddTaskBlocBuilder extends StatelessWidget {
                     'Task Title',
                     style: Styles.textStyle14meduim.copyWith(color: kGrayColor),
                   ),
-                  const SizedBox(
-                    height: 16,
+                  SizedBox(
+                    height: 16.h,
                   ),
                   CustomTextField(
                     hintText: 'Title',
@@ -43,15 +44,15 @@ class AddTaskBlocBuilder extends StatelessWidget {
                       }
                     },
                   ),
-                  const SizedBox(
-                    height: 30,
+                  SizedBox(
+                    height: 30.h,
                   ),
                   Text(
                     'Task Description',
                     style: Styles.textStyle14meduim.copyWith(color: kGrayColor),
                   ),
-                  const SizedBox(
-                    height: 16,
+                  SizedBox(
+                    height: 16.h,
                   ),
                   CustomTextField(
                     hintText: 'Description',
@@ -62,28 +63,28 @@ class AddTaskBlocBuilder extends StatelessWidget {
                       }
                     },
                   ),
-                  const SizedBox(
-                    height: 30,
+                  SizedBox(
+                    height: 30.h,
                   ),
                   Text('Task notes',
                       style:
                           Styles.textStyle14meduim.copyWith(color: kGrayColor)),
-                  const SizedBox(
-                    height: 16,
+                  SizedBox(
+                    height: 16.h,
                   ),
                   CustomTextField(
                     hintText: 'Notes',
                     controller: cubit.notesController,
                     validator: (value) {},
                   ),
-                  const SizedBox(
-                    height: 30,
+                  SizedBox(
+                    height: 30.h,
                   ),
                   Text('Task Deadline',
                       style:
                           Styles.textStyle14meduim.copyWith(color: kGrayColor)),
-                  const SizedBox(
-                    height: 16,
+                  SizedBox(
+                    height: 16.h,
                   ),
                   CustomTextField(
                     icon: Icon(
@@ -101,14 +102,14 @@ class AddTaskBlocBuilder extends StatelessWidget {
                       }
                     },
                   ),
-                  const SizedBox(
-                    height: 16,
+                  SizedBox(
+                    height: 16.h,
                   ),
                   Text('Select Role',
                       style:
                           Styles.textStyle14meduim.copyWith(color: kGrayColor)),
-                  const SizedBox(
-                    height: 30,
+                  SizedBox(
+                    height: 30.h,
                   ),
                   Center(
                     child: ToggleSwitch(
@@ -129,8 +130,8 @@ class AddTaskBlocBuilder extends StatelessWidget {
                       },
                     ),
                   ),
-                  const SizedBox(
-                    height: 80,
+                  SizedBox(
+                    height: 80.h,
                   ),
                   CustomButton(
                       title: 'Add Task',

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:task_app/constants.dart';
 import 'package:task_app/core/dependency_injection/dependency_injection.dart';
@@ -17,7 +18,7 @@ class AddTaskScreen extends StatelessWidget {
           appBar: AppBar(
             scrolledUnderElevation: 0,
             automaticallyImplyLeading: false,
-            leadingWidth: 65,
+            leadingWidth: 65.w,
             backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
             title: Text(
               'Add Task',
@@ -26,10 +27,10 @@ class AddTaskScreen extends StatelessWidget {
             ),
             leading: Padding(
               padding:
-                  const EdgeInsets.only(left: 24, top: 8, bottom: 8, right: 0),
+                  EdgeInsets.only(left: 24.w, top: 8.h, bottom: 8.h, right: 0),
               child: Container(
-                height: 40,
-                width: 40,
+                height: 40.h,
+                width: 40.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(
@@ -38,7 +39,7 @@ class AddTaskScreen extends StatelessWidget {
                 ),
                 child: IconButton(
                   color: Theme.of(context).primaryColor,
-                  iconSize: 20,
+                  iconSize: 20.sp,
                   padding: EdgeInsets.zero,
                   onPressed: () {
                     GoRouter.of(context).pop();

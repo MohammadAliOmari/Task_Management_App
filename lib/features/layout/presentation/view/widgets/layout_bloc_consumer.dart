@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/constants.dart';
 import 'package:task_app/features/layout/presentation/manager/cubit/layout_cubit.dart';
 
@@ -25,7 +26,7 @@ class LayoutBlocConsumer extends StatelessWidget {
             selectedItemColor: Theme.of(context).iconTheme.color,
             unselectedItemColor: kGrayColor,
             showSelectedLabels: false,
-            iconSize: 28,
+            iconSize: 28.sp,
             onTap: (value) {
               if (value == 2) {
                 context.read<LayoutCubit>().showBottomSheet(context);
@@ -49,10 +50,10 @@ class LayoutBlocConsumer extends StatelessWidget {
               BottomNavigationBarItem(
                 backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 icon: Container(
-                  height: 50,
-                  width: 50,
+                  height: 50.h,
+                  width: 50.w,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
+                    borderRadius: BorderRadius.circular(50).w,
                     color: Theme.of(context).iconTheme.color,
                   ),
                   child: const Icon(

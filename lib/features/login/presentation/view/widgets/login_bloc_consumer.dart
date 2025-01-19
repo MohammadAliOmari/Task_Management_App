@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:task_app/constants.dart';
@@ -43,8 +44,8 @@ class LoginBlocConsumer extends StatelessWidget {
                   style: Styles.textStyle25semibold
                       .copyWith(color: Theme.of(context).primaryColor),
                 ),
-                const SizedBox(
-                  height: 12,
+                SizedBox(
+                  height: 12.h,
                 ),
                 const Text(
                   'Please Inter your email address\nand password for Login',
@@ -52,8 +53,8 @@ class LoginBlocConsumer extends StatelessWidget {
                     color: kGrayColor,
                   ),
                 ),
-                const SizedBox(
-                  height: 40,
+                SizedBox(
+                  height: 40.h,
                 ),
                 CustomTextField(
                   validator: (value) {
@@ -64,8 +65,8 @@ class LoginBlocConsumer extends StatelessWidget {
                   hintText: 'Enter Your Email',
                   controller: cubit.emailController,
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: 30.h,
                 ),
                 CustomTextField(
                   validator: (value) {
@@ -87,8 +88,8 @@ class LoginBlocConsumer extends StatelessWidget {
                   hintText: 'Enter Your Password',
                   controller: cubit.passwordController,
                 ),
-                const SizedBox(
-                  height: 16,
+                SizedBox(
+                  height: 16.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -101,8 +102,8 @@ class LoginBlocConsumer extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: 30.h,
                 ),
                 CustomButton(
                   title: 'Log In',
@@ -112,8 +113,8 @@ class LoginBlocConsumer extends StatelessWidget {
                     }
                   },
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: 30.h,
                 ),
                 Column(
                   children: [
@@ -123,8 +124,8 @@ class LoginBlocConsumer extends StatelessWidget {
                         style: TextStyle(color: kGrayColor),
                       ),
                     ),
-                    const SizedBox(
-                      height: 30,
+                    SizedBox(
+                      height: 30.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -134,24 +135,24 @@ class LoginBlocConsumer extends StatelessWidget {
                           icon: Icon(
                             FontAwesomeIcons.apple,
                             color: Theme.of(context).primaryColor,
-                            size: 25,
+                            size: 25.sp,
                           ),
                         ),
-                        const SizedBox(
-                          width: 30,
+                        SizedBox(
+                          width: 30.w,
                         ),
                         IconButton(
                           onPressed: () {},
-                          icon: const Icon(
+                          icon: Icon(
                             FontAwesomeIcons.google,
                             color: Colors.red,
-                            size: 25,
+                            size: 25.sp,
                           ),
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 40,
+                    SizedBox(
+                      height: 40.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

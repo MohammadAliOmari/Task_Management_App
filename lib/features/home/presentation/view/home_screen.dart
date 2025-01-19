@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 
 import 'package:task_app/core/utils/styles/text_style.dart';
@@ -17,7 +18,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         scrolledUnderElevation: 0,
         automaticallyImplyLeading: false,
-        leadingWidth: 65,
+        leadingWidth: 65.w,
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         title: Text(
           time,
@@ -30,14 +31,14 @@ class HomeScreen extends StatelessWidget {
         leading: const LeadingButton(),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 24.0, top: 30),
+        padding: EdgeInsets.only(left: 24.0.w, top: 30.h),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Stack(
             alignment: Alignment.topRight,
             children: [
               Image.asset('assets/images/Ellipse.png'),
               SizedBox(
-                width: 300,
+                width: 300.w,
                 child: Text(
                   'Let’s make a\nhabits together  🙌',
                   style: Styles.textStyle25semibold
@@ -46,12 +47,12 @@ class HomeScreen extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(
-            height: 30,
+          SizedBox(
+            height: 30.h,
           ),
           const CategoryListView(),
-          const SizedBox(
-            height: 30,
+          SizedBox(
+            height: 30.h,
           ),
           Padding(
             padding: const EdgeInsets.only(right: 24),
@@ -66,8 +67,8 @@ class HomeScreen extends StatelessWidget {
                     const Icon(Icons.arrow_forward_ios_rounded),
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: 20.h,
                 ),
                 const InProgressListView(),
               ],

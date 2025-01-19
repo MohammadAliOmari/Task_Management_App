@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:task_app/constants.dart';
@@ -53,16 +54,16 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
           },
         ),
         Positioned(
-          top: 630,
+          top: 630.h,
           child: Padding(
-            padding: const EdgeInsets.only(left: 30), // Adjust as needed
+            padding: EdgeInsets.only(left: 30.w), // Adjust as needed
             child: SmoothPageIndicator(
               controller: pageController,
               count: onBoardingPage.length,
-              effect: const ExpandingDotsEffect(
+              effect: ExpandingDotsEffect(
                 dotColor: Colors.grey,
-                dotHeight: 8,
-                dotWidth: 8,
+                dotHeight: 8.h,
+                dotWidth: 8.w,
                 activeDotColor: kPurpleColor,
               ),
             ),
@@ -72,8 +73,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 50.0, horizontal: 10),
+              padding: EdgeInsets.symmetric(vertical: 50.0.h, horizontal: 10.w),
               child: TextButton(
                   onPressed: () {
                     GoRouter.of(context).go(AppRouter.kLogin);
@@ -95,7 +95,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
               },
               child: Image.asset(
                 'assets/images/next_button.png',
-                height: 190,
+                height: 190.h,
               ),
             ),
           ],

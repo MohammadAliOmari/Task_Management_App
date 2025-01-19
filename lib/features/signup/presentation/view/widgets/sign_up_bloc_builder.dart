@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:task_app/constants.dart';
@@ -24,7 +25,7 @@ class SignUpBlocBuilder extends StatelessWidget {
         return Form(
           key: cubit.formKey,
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24),
+            padding: EdgeInsets.symmetric(vertical: 16.0.h, horizontal: 24.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -45,15 +46,15 @@ class SignUpBlocBuilder extends StatelessWidget {
                   style: Styles.textStyle25semibold
                       .copyWith(color: Theme.of(context).primaryColor),
                 ),
-                const SizedBox(
-                  height: 12,
+                SizedBox(
+                  height: 12.h,
                 ),
                 const Text(
                   'Please Inter your Informatioin\nand create your account',
                   style: TextStyle(color: kGrayColor),
                 ),
-                const SizedBox(
-                  height: 40,
+                SizedBox(
+                  height: 40.h,
                 ),
                 CustomTextField(
                   validator: (value) {
@@ -64,8 +65,8 @@ class SignUpBlocBuilder extends StatelessWidget {
                   hintText: 'Enter Your Name',
                   controller: cubit.nameController,
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: 30.h,
                 ),
                 CustomTextField(
                   validator: (context) {
@@ -76,8 +77,8 @@ class SignUpBlocBuilder extends StatelessWidget {
                   hintText: 'Enter Your Email',
                   controller: cubit.emailController,
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: 30.h,
                 ),
                 CustomTextField(
                   validator: (value) {
@@ -99,8 +100,8 @@ class SignUpBlocBuilder extends StatelessWidget {
                   hintText: 'Enter Your Password',
                   controller: cubit.passwordController,
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: 30.h,
                 ),
                 CustomButton(
                   title: 'Sign Up',
@@ -110,8 +111,8 @@ class SignUpBlocBuilder extends StatelessWidget {
                     }
                   },
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: 30.h,
                 ),
                 Column(
                   children: [
@@ -121,8 +122,8 @@ class SignUpBlocBuilder extends StatelessWidget {
                         style: TextStyle(color: kGrayColor),
                       ),
                     ),
-                    const SizedBox(
-                      height: 30,
+                    SizedBox(
+                      height: 30.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -132,24 +133,24 @@ class SignUpBlocBuilder extends StatelessWidget {
                           icon: Icon(
                             FontAwesomeIcons.apple,
                             color: Theme.of(context).primaryColor,
-                            size: 25,
+                            size: 25.sp,
                           ),
                         ),
-                        const SizedBox(
-                          width: 30,
+                        SizedBox(
+                          width: 30.w,
                         ),
                         IconButton(
                           onPressed: () {},
-                          icon: const Icon(
+                          icon: Icon(
                             FontAwesomeIcons.google,
                             color: Colors.red,
-                            size: 25,
+                            size: 25.sp,
                           ),
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 40,
+                    SizedBox(
+                      height: 40.h,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

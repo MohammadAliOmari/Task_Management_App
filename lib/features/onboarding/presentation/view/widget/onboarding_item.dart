@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task_app/constants.dart';
 import 'package:task_app/core/utils/styles/text_style.dart';
 import 'package:task_app/features/onboarding/data/model/onboarding_model.dart';
@@ -19,14 +20,14 @@ Widget onBoardingItem(
     children: [
       Image(
         image: AssetImage(onBoarding!.image),
-        height: 434,
+        height: 434.h,
       ),
-      const SizedBox(
-        height: 24,
+      SizedBox(
+        height: 24.h,
       ),
       Padding(
-        padding: const EdgeInsets.only(
-          left: 30,
+        padding: EdgeInsets.only(
+          left: 30.w,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
