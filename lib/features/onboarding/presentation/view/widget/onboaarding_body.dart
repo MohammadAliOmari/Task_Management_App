@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:task_app/constants.dart';
 import 'package:task_app/core/utils/app_router.dart';
 import 'package:task_app/features/onboarding/data/model/onboarding_model.dart';
 import 'package:task_app/features/onboarding/presentation/view/widget/custome_shape.dart';
 import 'package:task_app/features/onboarding/presentation/view/widget/onboarding_item.dart';
-import 'dart:ui' as ui;
 
 class OnBoardingBody extends StatefulWidget {
   const OnBoardingBody({
@@ -109,7 +107,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
                       right: 51.w,
                       left: 62.w,
                       bottom: 77.h,
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_forward,
                         color: Colors.white,
                       ),

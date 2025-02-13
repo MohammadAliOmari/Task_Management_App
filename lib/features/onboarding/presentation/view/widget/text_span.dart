@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:task_app/constants.dart';
 
 List<TextSpan> buildTextSpans(String text, String highlightWord, context) {
   List<TextSpan> spans = [];

@@ -22,9 +22,9 @@ class RPSCustomPainter extends CustomPainter {
     path_0.lineTo(size.width * 0.01658117, size.height * 0.6478010);
     path_0.close();
 
-    Paint paint_0_fill = Paint()..style = PaintingStyle.fill;
-    paint_0_fill.color = Theme.of(context).iconTheme.color!;
-    canvas.drawPath(path_0, paint_0_fill);
+    Paint paint0Fill = Paint()..style = PaintingStyle.fill;
+    paint0Fill.color = Theme.of(context).iconTheme.color!;
+    canvas.drawPath(path_0, paint0Fill);
   }
 
   @override

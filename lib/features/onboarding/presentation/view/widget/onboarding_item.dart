@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:task_app/constants.dart';
 import 'package:task_app/core/utils/styles/text_style.dart';
 import 'package:task_app/features/onboarding/data/model/onboarding_model.dart';
 import 'package:task_app/features/onboarding/presentation/view/widget/text_span.dart';
