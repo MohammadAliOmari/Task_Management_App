@@ -16,15 +16,19 @@ ThemeData darkTheme = ThemeData(
   ),
   indicatorColor: kBlueColor,
   iconTheme: const IconThemeData(color: kBlueColor),
+  textTheme: const TextTheme(
+    headlineMedium: TextStyle(
+      color: Colors.white,
+      fontWeight: FontWeight.w500,
+    ),
+  ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       // elevation: 12,
       backgroundColor: kBlueColor,
-      padding: const EdgeInsets.symmetric(horizontal: 150, vertical: 15),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
-      // shadowColor: kBlueColor,
+      padding: const EdgeInsets.symmetric(vertical: 15),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      shadowColor: kBlueColor,
     ),
   ),
   scaffoldBackgroundColor: const Color(0xff0A0C16),

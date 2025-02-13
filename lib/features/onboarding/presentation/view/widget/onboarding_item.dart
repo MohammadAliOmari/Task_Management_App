@@ -34,13 +34,15 @@ Widget onBoardingItem(
           children: [
             Text(
               'Task Management',
-              style: Styles.textStyle18meduim.copyWith(color: kPurpleColor),
+              style: Styles.textStyle18meduim
+                  .copyWith(color: Theme.of(context).iconTheme.color),
             ),
             RichText(
               text: TextSpan(
                 style:
                     Theme.of(context).textTheme.headlineMedium, // Default style
-                children: buildTextSpans(onBoarding.description, st[i]),
+                children:
+                    buildTextSpans(onBoarding.description, st[i], context),
               ),
             ),
           ],

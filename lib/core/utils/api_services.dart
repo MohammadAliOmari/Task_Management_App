@@ -69,6 +69,33 @@ class ApiServices {
       return {'error': 'Unexpected error: ${e.message}'};
     }
   }
+
+  Future<Map<String, dynamic>> get(
+    String endPoint, {
+    Map<String, dynamic>? queryParameters,
+  }) async {
+    try {
+      _dio.options.headers = {'Content-Type': 'application/json'};
+      final response =
+          await _dio.get(endPoint, queryParameters: queryParameters);
+      log("Response data type: ${response.data.runtimeType}");
+      log("Raw response: ${response.data}");
+      // Handle response
+      if (response.data is String) {
+        return jsonDecode(response.data);
+      } else if (response.data is Map<String, dynamic>) {
+        return response.data;
+      } else {
+        throw Exception(
+            "Unexpected response type: ${response.data.runtimeType}");
+      }
+    } on DioException catch (e) {
+      final errorData = _handleError(e);
+      return errorData; // Return the error data ApiException(errorData['error']); // Throw a custom ApiException
+    } catch (e) {
+      return {'error': e.toString()};
+    }
+  }
 }
 
 class ApiException implements Exception {

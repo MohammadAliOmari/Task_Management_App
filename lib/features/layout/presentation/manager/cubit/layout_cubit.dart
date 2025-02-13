@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:task_app/core/utils/app_router.dart';
 import 'package:task_app/features/home/presentation/view/home_screen.dart';
@@ -32,12 +33,14 @@ class LayoutCubit extends Cubit<LayoutCubitState> {
       builder: (context) => Container(
           decoration: BoxDecoration(
               color: Theme.of(context).scaffoldBackgroundColor,
-              borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(30), topRight: Radius.circular(20))),
-          height: 400,
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30.r),
+                  topRight: Radius.circular(20.r))),
+          height: 400.h,
           child: Padding(
-            padding: const EdgeInsets.all(
-              24,
+            padding: EdgeInsets.symmetric(
+              horizontal: 24.w,
+              vertical: 24.h,
             ),
             child: Column(
               children: [
@@ -48,22 +51,22 @@ class LayoutCubit extends Cubit<LayoutCubitState> {
                     GoRouter.of(context).push(AppRouter.kAddTask);
                   },
                 ),
-                const SizedBox(
-                  height: 16,
+                SizedBox(
+                  height: 16.h,
                 ),
                 const BottomSheetItem(
                   title: 'Create Team',
                   icon: Icon(Icons.group_add_outlined),
                 ),
-                const SizedBox(
-                  height: 16,
+                SizedBox(
+                  height: 16.h,
                 ),
                 const BottomSheetItem(
                   title: 'Create Project',
                   icon: Icon(Icons.add_chart_outlined),
                 ),
-                const SizedBox(
-                  height: 16,
+                SizedBox(
+                  height: 16.h,
                 ),
                 const BottomSheetItem(
                   title: 'Create Meeting',
@@ -71,10 +74,10 @@ class LayoutCubit extends Cubit<LayoutCubitState> {
                 ),
                 const Spacer(),
                 Container(
-                  height: 50,
-                  width: 50,
+                  height: 50.h,
+                  width: 50.w,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
+                    borderRadius: BorderRadius.circular(50).r,
                     color: Theme.of(context).iconTheme.color,
                   ),
                   child: IconButton(

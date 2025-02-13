@@ -5,7 +5,9 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:task_app/constants.dart';
 import 'package:task_app/core/utils/app_router.dart';
 import 'package:task_app/features/onboarding/data/model/onboarding_model.dart';
+import 'package:task_app/features/onboarding/presentation/view/widget/custome_shape.dart';
 import 'package:task_app/features/onboarding/presentation/view/widget/onboarding_item.dart';
+import 'dart:ui' as ui;
 
 class OnBoardingBody extends StatefulWidget {
   const OnBoardingBody({
@@ -64,7 +66,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
                 dotColor: Colors.grey,
                 dotHeight: 8.h,
                 dotWidth: 8.w,
-                activeDotColor: kPurpleColor,
+                activeDotColor: Theme.of(context).iconTheme.color!,
               ),
             ),
           ),
@@ -78,29 +80,51 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
                   onPressed: () {
                     GoRouter.of(context).go(AppRouter.kLogin);
                   },
-                  child: const Text(
+                  child: Text(
                     style: TextStyle(
-                      color: kPurpleColor,
+                      color: Theme.of(context).iconTheme.color,
                     ),
                     'Skip',
                   )),
             ),
             GestureDetector(
-              onTap: () {
-                isLast
-                    ? GoRouter.of(context).go(AppRouter.kLogin)
-                    : pageController.nextPage(
-                        duration: const Duration(milliseconds: 1000),
-                        curve: Curves.easeInOut);
-              },
-              child: Image.asset(
-                'assets/images/next_button.png',
-                height: 190.h,
-              ),
-            ),
+                onTap: () {
+                  isLast
+                      ? GoRouter.of(context).go(AppRouter.kLogin)
+                      : pageController.nextPage(
+                          duration: const Duration(milliseconds: 1000),
+                          curve: Curves.easeInOut);
+                },
+                child: Stack(
+                  children: [
+                    CustomPaint(
+                      size: Size(
+                          129,
+                          (129 * 1.4464285714285714)
+                              .toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
+                      painter: RPSCustomPainter(context),
+                    ),
+                    Positioned(
+                      top: 101.h,
+                      right: 51.w,
+                      left: 62.w,
+                      bottom: 77.h,
+                      child: Icon(
+                        Icons.arrow_forward,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                )),
           ],
         ),
       ],
     );
   }
 }
+
+//Copy this CustomPainter code to the Bottom of the File
+
+//Add this CustomPaint widget to the Widget Tree
+
+//Copy this CustomPainter code to the Bottom of the File

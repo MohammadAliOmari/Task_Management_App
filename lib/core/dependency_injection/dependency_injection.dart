@@ -3,6 +3,8 @@ import 'package:get_it/get_it.dart';
 import 'package:task_app/core/utils/api_services.dart';
 import 'package:task_app/features/add_task/data/repos/add_task_repo_impl.dart';
 import 'package:task_app/features/add_task/presentation/manager/add_task_cubit.dart';
+import 'package:task_app/features/home/data/repo/home_repo_impl.dart';
+import 'package:task_app/features/home/presentation/manager/cubit/home_cubit.dart';
 import 'package:task_app/features/login/data/repo/login_repo_imp.dart';
 import 'package:task_app/features/login/presentation/manager/cubit/login_cubit.dart';
 import 'package:task_app/features/signup/data/repo/sign_up_repo_imp.dart';
@@ -34,4 +36,7 @@ void getItSetup() {
   );
   getIt.registerFactory<AddTaskCubit>(
       () => AddTaskCubit(getIt.get<AddTaskRepoImpl>()));
+  getIt.registerLazySingleton<HomeRepoImpl>(
+      () => HomeRepoImpl(getIt.get<ApiServices>()));
+  getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt.get<HomeRepoImpl>()));
 }

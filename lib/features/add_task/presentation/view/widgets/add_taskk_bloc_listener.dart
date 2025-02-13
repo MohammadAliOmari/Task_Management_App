@@ -40,7 +40,7 @@ class AddTaskBlocListener extends StatelessWidget {
               icon: const Icon(Icons.check),
               autoCloseDuration: const Duration(seconds: 2),
               textcolor: Colors.white);
-          GoRouter.of(context).go(AppRouter.kHome);
+          GoRouter.of(context).pop();
         } else if (state is AddTaskFailureState) {
           GoRouter.of(context).pop();
           snackBar(

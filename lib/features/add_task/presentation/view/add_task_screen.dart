@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:task_app/constants.dart';
 import 'package:task_app/core/dependency_injection/dependency_injection.dart';
+import 'package:task_app/core/utils/app_router.dart';
 import 'package:task_app/core/utils/styles/text_style.dart';
 import 'package:task_app/features/add_task/presentation/manager/add_task_cubit.dart';
 import 'package:task_app/features/add_task/presentation/view/widgets/add_task_bloc_builder.dart';
@@ -18,7 +19,7 @@ class AddTaskScreen extends StatelessWidget {
           appBar: AppBar(
             scrolledUnderElevation: 0,
             automaticallyImplyLeading: false,
-            leadingWidth: 65.w,
+            leadingWidth: 60.w,
             backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
             title: Text(
               'Add Task',
@@ -42,7 +43,7 @@ class AddTaskScreen extends StatelessWidget {
                   iconSize: 20.sp,
                   padding: EdgeInsets.zero,
                   onPressed: () {
-                    GoRouter.of(context).pop();
+                    GoRouter.of(context).go(AppRouter.kHome);
                   },
                   icon: const Icon(Icons.arrow_back_ios_sharp),
                 ),
